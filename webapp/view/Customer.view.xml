@@ -48,7 +48,9 @@
                             <Label id="customer_label_gender" text="{i18n>app.gender}" /> 
                             <Select id="Select1" items="{genderModel>/genders}" selectedKey="{/gender}">
                                 <items>
-                                    <core:Item id="customer_item_template" key="{genderModel>}" text="{= ${genderModel>} === 'female' ? ${i18n>female} : ${i18n>male} }" />
+                                    <core:Item id="customer_item_template" key="{genderModel>}" text="{ path: 'genderModel>', formatter: '.genderFormatter'}"/> <!--Formatter-->
+
+                                    <!--<core:Item id="customer_item_template" key="{genderModel>}" text="{= ${genderModel>} === 'female' ? ${i18n>female} : ${i18n>male} }" />-->
                                     <!--<core:Item id="customer_item_template" key="{genderModel>}" text="{genderModel>}" /> Aggregation Binding-->
                                 <!--
                                     <core:Item id="gender0" key="female" text="{i18n>female}"/>
